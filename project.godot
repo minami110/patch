@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="patch"
+run/main_scene="res://Title/title.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="patch"
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
 
 [rendering]
 
