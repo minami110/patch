@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://jkqdteuy2p50"]
+
+[ext_resource type="Script" path="res://module/md_mixer.gd" id="1_1c4rf"]
+[ext_resource type="Script" path="res://module/md_drawer.gd" id="2_iad32"]
+[ext_resource type="PackedScene" uid="uid://0adroew6sg8n" path="res://circuit/port_out.tscn" id="3_57fh7"]
+[ext_resource type="Script" path="res://module/module_dragger.gd" id="4_phgrx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yff06"]
+size = Vector2(30, 20)
+
+[node name="MdMixer" type="Node2D"]
+script = ExtResource("1_1c4rf")
+
+[node name="MdDrawer" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_iad32")
+_text = "mixer"
+_size = Vector2(30, 20)
+
+[node name="PortIn0" parent="." instance=ExtResource("3_57fh7")]
+unique_name_in_owner = true
+position = Vector2(-10, 10)
+
+[node name="PortOut0" parent="." instance=ExtResource("3_57fh7")]
+unique_name_in_owner = true
+position = Vector2(40, 0)
+
+[node name="PortOut1" parent="." instance=ExtResource("3_57fh7")]
+unique_name_in_owner = true
+position = Vector2(40, 20)
+
+[node name="ModuleDragger" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 0
+script = ExtResource("4_phgrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ModuleDragger"]
+position = Vector2(15, 10)
+shape = SubResource("RectangleShape2D_yff06")
+debug_color = Color(0, 0.650761, 0.0693266, 0)

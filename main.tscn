@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7oudq3e50jax"]
+[gd_scene load_steps=5 format=3 uid="uid://b7oudq3e50jax"]
 
 [ext_resource type="PackedScene" uid="uid://b02j1n3sn25ld" path="res://module/signal_monitor.tscn" id="2_k2w78"]
 [ext_resource type="PackedScene" uid="uid://ehceba7yvpli" path="res://module/md_gun.tscn" id="3_kqfop"]
 [ext_resource type="PackedScene" uid="uid://b6ts3736iwa7c" path="res://module/md_button.tscn" id="3_sfv15"]
+[ext_resource type="PackedScene" uid="uid://jkqdteuy2p50" path="res://module/md_mixer.tscn" id="4_nttu0"]
 
 [node name="Main" type="Node"]
 
@@ -20,3 +21,9 @@ position = Vector2(504, 333)
 
 [node name="MdGun2" parent="." instance=ExtResource("3_kqfop")]
 position = Vector2(553, 233)
+
+[node name="MdMixer" parent="." instance=ExtResource("4_nttu0")]
+position = Vector2(301, 466)
+
+[node name="MdMixer2" parent="." instance=ExtResource("4_nttu0")]
+position = Vector2(409, 541)
