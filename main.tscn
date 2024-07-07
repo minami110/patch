@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7oudq3e50jax"]
+
+[ext_resource type="PackedScene" uid="uid://b02j1n3sn25ld" path="res://module/signal_monitor.tscn" id="2_k2w78"]
+[ext_resource type="PackedScene" uid="uid://ssi38arnwilw" path="res://module/constant.tscn" id="2_xjmug"]
+[ext_resource type="PackedScene" uid="uid://b6ts3736iwa7c" path="res://module/md_button.tscn" id="3_sfv15"]
+
+[node name="Main" type="Node"]
+
+[node name="Constant" parent="." instance=ExtResource("2_xjmug")]
+position = Vector2(160, 310)
+_on = 30.0
+
+[node name="Constant2" parent="." instance=ExtResource("2_xjmug")]
+position = Vector2(128, 140)
+
+[node name="Constant3" parent="." instance=ExtResource("2_xjmug")]
+position = Vector2(378, 170)
+
+[node name="SignalMonitor" parent="." instance=ExtResource("2_k2w78")]
+position = Vector2(344, 339)
+
+[node name="SignalMonitor2" parent="." instance=ExtResource("2_k2w78")]
+position = Vector2(520, 471)
+
+[node name="Button" parent="." instance=ExtResource("3_sfv15")]
+position = Vector2(168, 474)
