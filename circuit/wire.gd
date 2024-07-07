@@ -10,13 +10,17 @@ func _draw():
 		var to = get_global_mouse_position()
 		draw_line(to_local(_in.global_position), to_local(to), Color.GREEN, 1.0)
 	elif (_in != null and _out != null):
-		var str = _in._value
-		var color = Color(str, str, 0)
+		var strength = _in._value
+		var color = Color(strength, strength, 0)
 		draw_line(to_local(_in.global_position), to_local(_out.global_position), color, 1.0)
 	
 func _process(_delta):
 	queue_redraw()
 		
 func _exit_tree():
-	_in = null
-	_out = null
+	if _in != null:
+		_in._other = null
+		_in._wire = null
+	if _out != null:
+		_out._other = null
+		_out._wire = null

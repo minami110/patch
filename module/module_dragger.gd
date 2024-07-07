@@ -6,6 +6,12 @@ var _drag_offset := Vector2.ZERO
 func _ready():
 	set_process_input(false)
 
+func _mouse_enter():
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+
+func _mouse_exit():
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:

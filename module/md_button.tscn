@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6ts3736iwa7c"]
 
 [ext_resource type="Script" path="res://module/button.gd" id="1_gukaq"]
-[ext_resource type="Texture2D" uid="uid://by330uebp2h3t" path="res://icon.svg" id="2_xh8ha"]
 [ext_resource type="PackedScene" uid="uid://0adroew6sg8n" path="res://circuit/port_out.tscn" id="3_mxt6x"]
+[ext_resource type="Script" path="res://module/md_drawer.gd" id="4_07ixd"]
 [ext_resource type="Script" path="res://module/module_dragger.gd" id="4_a4epb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yff06"]
@@ -11,10 +11,9 @@ size = Vector2(64, 64)
 [node name="MdButton" type="Node2D"]
 script = ExtResource("1_gukaq")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_xh8ha")
-centered = false
+[node name="MdDrawer" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_07ixd")
 
 [node name="PortOut" parent="." instance=ExtResource("3_mxt6x")]
 unique_name_in_owner = true

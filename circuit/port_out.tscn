@@ -1,16 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://0adroew6sg8n"]
 
 [ext_resource type="Script" path="res://circuit/port_out.gd" id="1_xfkie"]
-[ext_resource type="Texture2D" uid="uid://by330uebp2h3t" path="res://icon.svg" id="2_lp78l"]
+[ext_resource type="Script" path="res://circuit/port_drawer.gd" id="2_exw5p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxddt"]
 
 [node name="PortOut" type="Area2D"]
 script = ExtResource("1_xfkie")
 
+[node name="PortDrawer" type="Node2D" parent="."]
+script = ExtResource("2_exw5p")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qxddt")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_lp78l")

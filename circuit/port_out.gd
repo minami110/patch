@@ -10,13 +10,14 @@ var _other : PortOut
 var _wire : Wire
 
 func _input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		# Already wired
-		if is_wired():
-			return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		# すでに Wire がつながっていて、ダブルクリックされたら Wire を削除する
+		if event.double_click and is_wired():
+			_wire.queue_free()
+			_wire = null
 
-		# Left Click Pressed
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		# Wire がつながっておらず, マウスが押されたら Wire を生成する
+		elif event.pressed and not is_wired():
 			# Spawn Wire
 			_wire = Wire.new()
 			_wire._in = self
@@ -53,8 +54,7 @@ func _input(event):
 				_wire._out = target
 			# 生成してた Wire を削除する
 			else:
-				remove_child(_wire)
-				_wire._in = null
+				_wire.queue_free()
 				_wire = null
 
 # 現在ワイヤーが繋がっているかどうか
