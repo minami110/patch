@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7oudq3e50jax"]
+[gd_scene load_steps=6 format=3 uid="uid://b7oudq3e50jax"]
 
 [ext_resource type="PackedScene" uid="uid://b02j1n3sn25ld" path="res://module/signal_monitor.tscn" id="2_k2w78"]
 [ext_resource type="PackedScene" uid="uid://ehceba7yvpli" path="res://module/md_gun.tscn" id="3_kqfop"]
 [ext_resource type="PackedScene" uid="uid://b6ts3736iwa7c" path="res://module/md_button.tscn" id="3_sfv15"]
 [ext_resource type="PackedScene" uid="uid://jkqdteuy2p50" path="res://module/md_mixer.tscn" id="4_nttu0"]
+[ext_resource type="Script" path="res://common/debug_info.gd" id="5_368d8"]
 
 [node name="Main" type="Node"]
+
+[node name="DebugInfo" type="Node2D" parent="."]
+script = ExtResource("5_368d8")
 
 [node name="SignalMonitor" parent="." instance=ExtResource("2_k2w78")]
 position = Vector2(344, 339)

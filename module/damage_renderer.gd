@@ -9,3 +9,4 @@ func _draw():
 	var color = _outline_color
 	draw_set_transform(_size / -2, deg_to_rad(45)) # Rotate 45 degrees
 	draw_rect(Rect2(Vector2.ZERO, _size), color, false)
+
