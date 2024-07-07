@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://ehceba7yvpli"]
+
+[ext_resource type="Script" path="res://module/md_gun.gd" id="1_te68r"]
+[ext_resource type="PackedScene" uid="uid://ivfcw5vxtypl" path="res://module/damage.tscn" id="2_c4j3h"]
+[ext_resource type="Script" path="res://module/md_drawer.gd" id="2_hn23y"]
+[ext_resource type="PackedScene" uid="uid://0adroew6sg8n" path="res://circuit/port_out.tscn" id="3_hm5lp"]
+[ext_resource type="Script" path="res://module/module_dragger.gd" id="4_avfss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yff06"]
+size = Vector2(32, 32)
+
+[node name="MdGun" type="Node2D"]
+script = ExtResource("1_te68r")
+_damage_scene = ExtResource("2_c4j3h")
+
+[node name="MdDrawer" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_hn23y")
+_text = "gun"
+_size = Vector2(32, 32)
+
+[node name="PortIn" parent="." instance=ExtResource("3_hm5lp")]
+unique_name_in_owner = true
+position = Vector2(-10, 16)
+
+[node name="ModuleDragger" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 0
+script = ExtResource("4_avfss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ModuleDragger"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_yff06")
+debug_color = Color(0, 0.650761, 0.0693266, 0)
+
+[node name="ProjectileSpawnRoot" type="Node" parent="."]
+unique_name_in_owner = true
